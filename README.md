@@ -7,7 +7,6 @@ It doesn't supports (and is not intended) persistence.
 
 
 ## Features
--------------
 
 - [x] Add products with custom class via Generics
 - [x] Increment/decrement the quantity of the cart items
@@ -17,9 +16,8 @@ It doesn't supports (and is not intended) persistence.
 
 
 ## Examples
--------------
 
-## Implement ProductProtocol
+### Implement ProductProtocol
 
 **Cart** doesn't provides any class to use as product in cart, you must implement the `ProductProtocol` to can create a Cart instance.
 
@@ -84,7 +82,7 @@ let pizza = items[0]
 ```
 
 
-## Cart delegate
+### Cart delegate
 
 You can know when a cart item is added, deleted, if its quantity was changed and when the cart is cleaned, implementing the `CartDelegate`.
 
