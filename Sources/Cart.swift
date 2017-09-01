@@ -63,6 +63,9 @@ public class Cart<T: ProductProtocol> {
     private var items = [Item<T>]()
 
 
+    /// Public init
+    public init() {}
+
     /// Gets the item at index.
     public subscript(index: Int) -> Item<T> {
         return items[index]
