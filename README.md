@@ -54,7 +54,7 @@ extension Product: Equatable {
 let items = Cart<Product>()
 ```
 
-##  When you create you custom class that implements the ProductProtocol, you will ready to create an instance of Cart.
+###  When you create you custom class that implements the ProductProtocol, you will ready to create an instance of Cart.
 
 ```swift
 
