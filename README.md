@@ -104,8 +104,8 @@ extension MyViewController: CartDelegate {
 
         case .increment(at: let index), .decrement(at: let index):
             let indexPath = IndexPath(row: index, section: 0)
-            let cell = tableView.cellForRow(at: indexPath)!
-            cell.update(quantity: items[index].quantity)
+            let cell = tableView.cellForRow(at: indexPath) as! MyTableViewCell
+            cell.quantityLabel.text = String(items[index].quantity)
 
         case .delete(at: let index):
             let indexPath = IndexPath(row: index, section: 0)
