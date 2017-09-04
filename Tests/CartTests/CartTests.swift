@@ -96,7 +96,7 @@ class CartTests: XCTestCase {
         XCTAssertEqual(items.amount, 200)
     }
 
-    func testDelegateInsert() {
+    func testDelegateAdd() {
         delegateExpectation = expectation(description: "Waiting for insert delegate")
 
         items.delegate = self
@@ -190,7 +190,12 @@ class CartTests: XCTestCase {
         ("testDecrement", testDecrement),
         ("testRemove", testRemove),
         ("testClean", testClean),
-        ("testAmount", testAmount)
+        ("testAmount", testAmount),
+        ("testDelegateAdd", testDelegateAdd),
+        ("testDelegateIncrement", testDelegateIncrement),
+        ("testDelegateDecrement", testDelegateDecrement),
+        ("testDelegateDelete", testDelegateDelete),
+        ("testDelegateClean", testDelegateClean)
     ]
 
 }
@@ -210,6 +215,7 @@ extension CartTests: CartDelegate {
         case .add(at: let index):
             if case .add(at: let expectedIndex) = expectedType {
                 XCTAssertEqual(index, expectedIndex)
+                XCTAssertEqual(items.amount, 120)
             } else {
                 XCTFail("The types does not match")
             }
