@@ -60,24 +60,26 @@ let items = Cart<Product>()
 
 /// Note: The 'Product' can by any class that implements 'ProductProtocol'
 let items = Cart<Product>()
-let pizza = Product(name: "Pizza", price: 12.00)
+let pizza = Product(name: "Pizza", price: 120.00)
 items.add(pizza)
 
-// You can add a product with a quantity
+// You can add a product with an initial quantity
 let soda = Product(id: 2, name: "Coca-cola", price: 20.00)
 items.add(soda, quantity: 2)
 
 // Count the number of different items in the cart
 print(items.count) // 2
 
-//  Count the number of products regarding the quantity of each one.
+//  Count the number of products regarding the quantity of each one
 print(items.countQuantities) // 3
 
 // Get the amount to pay
-print(items.amount) // 52.00
+print(items.amount) // 160.00
 
 // Get an item
-let pizza = items[0]
+let pizzaItem = items[0]
+print(pizzaItem.product.price) // 120
+print(pizzaItem.quantity) // 1
 
 ```
 
