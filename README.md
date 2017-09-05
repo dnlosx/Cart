@@ -81,6 +81,20 @@ let pizzaItem = items[0]
 print(pizzaItem.product.price) // 120
 print(pizzaItem.quantity) // 1
 
+// Modify the quantity
+items.increment(pizza)
+print(items[0].quantity) // 2
+
+items.increment(at: 0) // Increments item at index
+print(items[0].quantity) // 3
+
+items.decrement(pizza)
+print(items[0].quantity) // 2
+
+items.decrement(at: 0)  // Decrements item at index
+print(items[0].quantity) // 1
+
+
 ```
 
 
