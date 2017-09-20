@@ -39,9 +39,6 @@ class CartTests: XCTestCase {
     }
 
     func testAdd() {
-
-        items = Cart()
-
         items.add(pizza)
         XCTAssertEqual(items.count, 1)
         XCTAssertEqual(items.countQuantities, 1)
@@ -204,7 +201,7 @@ class CartTests: XCTestCase {
 
 extension CartTests: CartDelegate {
 
-    func cart<T>(_ cart: Cart<T>, itemsDidChangeWithType type: CartItemChangeType) where T : ProductProtocol {
+    func cart<T>(_ cart: Cart<T>, itemsDidChangeWithType type: CartItemChangeType) {
 
         guard let expectedType = expectedType else {
             XCTFail("The expected type must not be nil")

@@ -45,6 +45,6 @@ public protocol CartDelegate {
     ///
     /// - parameter type: Describes which type of change was made.
     ///
-    func cart<T: ProductProtocol>(_ cart: Cart<T>, itemsDidChangeWithType type: CartItemChangeType)
+    func cart<T>(_ cart: Cart<T>, itemsDidChangeWithType type: CartItemChangeType)
     
 }
