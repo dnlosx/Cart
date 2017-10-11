@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "Cart"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "This project contains the basic needed to create a Shopping Cart in memory. It doesn't supports (and is not intended) persistence."
   s.homepage     = "https://github.com/dnlosx/Cart"
   s.license      = { :type => "MIT", :file => "LICENSE" }
