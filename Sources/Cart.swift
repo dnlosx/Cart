@@ -25,7 +25,7 @@ public typealias Item<T> = (product: T, quantity: Int)
 
 
 /// An object that coordinate the products to sell.
-public class Cart<T: ProductProtocol> {
+open class Cart<T: ProductProtocol> {
 
     /// Counts the number of items without regard to quantity of each one.
     /// Use this to know the number of items in a list, e.g. To get the number of rows in a table view.
