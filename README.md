@@ -136,3 +136,9 @@ extension MyViewController: CartDelegate {
 }
 ```
 
+
+### Cloning notes
+
+This project was created with Swift Package Mananger, this mean that the `xcodeproj` file is ignored by default. If you want to use Xcode to build, test or edit this repository, you can use the command `swift package generate-xcodeproj`.
+
+
