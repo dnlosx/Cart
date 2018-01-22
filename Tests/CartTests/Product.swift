@@ -18,7 +18,7 @@
 
 
 import Foundation
-
+import Cart
 
 class Product: ProductProtocol {
 
