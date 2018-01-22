@@ -19,7 +19,7 @@ It doesn't supports (and is not intended) persistence.
 
 ### Implement ProductProtocol
 
-**Cart** doesn't provides any class to use as product in cart, you must implement the `ProductProtocol` to can create a Cart instance.
+**Cart** doesn't provides any class to use as product in cart, you must implement the `ProductProtocol` to be able of create a Cart instance.
 
 For conform the `ProductProtocol` is needed to implement the `price` property, and the requirements of `Equatable`.
 
