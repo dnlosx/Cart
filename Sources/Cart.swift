@@ -18,11 +18,8 @@
 
 import Foundation
 
-
 /// Describes the product and quantity.
 public typealias Item<T> = (product: T, quantity: Int)
-
-
 
 /// An object that coordinate the products to sell.
 open class Cart<T: ProductProtocol> {
@@ -156,5 +153,4 @@ open class Cart<T: ProductProtocol> {
 
         delegate?.cart(self, itemsDidChangeWithType: .clean)
     }
-    
 }

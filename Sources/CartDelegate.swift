@@ -18,7 +18,6 @@
 
 import Foundation
 
-
 public enum CartItemChangeType {
 
     /// When a new item is added to the cart.
@@ -37,7 +36,6 @@ public enum CartItemChangeType {
     case clean
 
 }
-
 
 public protocol CartDelegate {
 

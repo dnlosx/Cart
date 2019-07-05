@@ -194,7 +194,6 @@ class CartTests: XCTestCase {
         ("testDelegateDelete", testDelegateDelete),
         ("testDelegateClean", testDelegateClean)
     ]
-
 }
 
 
@@ -243,15 +242,12 @@ extension CartTests: CartDelegate {
             delegateExpectation?.fulfill()
 
         case .clean:
-            defer {
-                delegateExpectation?.fulfill()
-            }
+            defer { delegateExpectation?.fulfill() }
+            
             guard case .clean = expectedType else {
                 XCTFail("The types does not match")
                 return
             }
         }
     }
-
-
 }
