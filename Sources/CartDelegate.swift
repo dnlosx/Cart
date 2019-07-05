@@ -32,7 +32,7 @@ public enum CartItemChangeType {
     /// When an existing item is removed from the cart.
     case delete(at: Int)
 
-    /// When the cart is cleaned (All items was removed).
+    /// When the cart is cleaned (All items were removed).
     case clean
 }
 
