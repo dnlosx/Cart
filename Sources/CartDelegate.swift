@@ -34,7 +34,6 @@ public enum CartItemChangeType {
 
     /// When the cart is cleaned (All items was removed).
     case clean
-
 }
 
 public protocol CartDelegate {
@@ -44,5 +43,4 @@ public protocol CartDelegate {
     /// - parameter type: Describes which type of change was made.
     ///
     func cart<T>(_ cart: Cart<T>, itemsDidChangeWithType type: CartItemChangeType)
-    
 }

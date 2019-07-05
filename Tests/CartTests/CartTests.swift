@@ -180,7 +180,6 @@ class CartTests: XCTestCase {
         }
     }
 
-
     static var allTests = [
         ("testAdd", testAdd),
         ("testIncrement", testIncrement),

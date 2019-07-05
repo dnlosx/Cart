@@ -33,7 +33,6 @@ class Product: ProductProtocol {
     }
 }
 
-
 extension Product: Equatable {
 
     static func == (lhs: Product, rhs: Product) -> Bool {
