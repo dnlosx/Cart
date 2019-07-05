@@ -72,7 +72,7 @@ open class Cart<T: ProductProtocol> {
     }
 
     /// Adds a product to the items.
-    /// if the product already exists, increments 1 to the quantity, otherwise adds as new one.
+    /// if the product already exists, increments the quantity, otherwise adds as new one.
     ///
     /// - parameter product: The product to add.
     /// - parameter quantity: How many times will add the products. Default is 1.

@@ -36,8 +36,6 @@ class Product: ProductProtocol {
         self.name = name
         self.price = price
     }
-
-
 }
 
 // Equatable is required to implement ProductProtocol.
