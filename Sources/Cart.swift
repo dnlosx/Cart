@@ -15,7 +15,6 @@
 //    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 //    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 import Foundation
 
 /// Describes the product and quantity.
@@ -58,7 +57,6 @@ open class Cart<T: ProductProtocol> {
 
     /// The list of products to sell.
     private var items = [Item<T>]()
-
 
     /// Public init
     public init() {}
