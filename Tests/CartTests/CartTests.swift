@@ -18,17 +18,17 @@
 import XCTest
 @testable import Cart
 
-class CartTests: XCTestCase {
+final class CartTests: XCTestCase {
 
-    var items = Cart<Product>()
+    private var items = Cart<Product>()
 
-    var pizza = Product(id: 1, name: "Peperoni pizza", price: 120.00)
-    var soda = Product(id: 2, name: "Coca-cola", price: 20.00)
+    private var pizza = Product(id: 1, name: "Peperoni pizza", price: 120.00)
+    private var soda = Product(id: 2, name: "Coca-cola", price: 20.00)
 
     // Delegate expectations
-    var delegateExpectation: XCTestExpectation?
+    private var delegateExpectation: XCTestExpectation?
 
-    var expectedType: CartItemChangeType?
+    private var expectedType: CartItemChangeType?
 
 
     override func setUp() {
@@ -45,6 +45,11 @@ class CartTests: XCTestCase {
         items.add(soda, quantity: 2)
         XCTAssertEqual(items.count, 2)
         XCTAssertEqual(items.countQuantities, 3)
+        
+        // Add an existing product.
+        items.add(soda, quantity: 2)
+        XCTAssertEqual(items.count, 2)
+        XCTAssertEqual(items.countQuantities, 5)
     }
 
     func testIncrement() {
