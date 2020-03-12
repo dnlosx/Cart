@@ -48,7 +48,7 @@ final class CartTests: XCTestCase {
         
         // Add an existing product.
         items.add(soda, quantity: 2)
-        XCTAssertEqual(items.count, 2)
+        XCTAssertEqual(items[1].quantity, 4)
         XCTAssertEqual(items.countQuantities, 5)
     }
 
