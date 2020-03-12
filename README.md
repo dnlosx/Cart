@@ -19,9 +19,9 @@ It doesn't supports (and is not intended) persistence.
 
 ### Implement ProductProtocol
 
-**Cart** doesn't provides any class to use as product in cart, you must implement the `ProductProtocol` to be able of create a Cart instance.
+**Cart** doesn't provide any type to use as product in cart, you must implement the `ProductProtocol` to be able of create a Cart instance.
 
-For conform the `ProductProtocol` is needed to implement the `price` property, and the requirements of `Equatable`.
+To conform the `ProductProtocol` is needed to implement the `price` property, and the requirements of `Equatable`.
 
 ```swift
 
@@ -56,7 +56,7 @@ let items = Cart<Product>()
 
 ```swift
 
-/// Note: The 'Product' can by any class that implements 'ProductProtocol'
+/// Note: The 'Product' can be any class that implements 'ProductProtocol'
 let items = Cart<Product>()
 let pizza = Product(name: "Pizza", price: 120.00)
 items.add(pizza)
@@ -98,10 +98,10 @@ print(items[0].quantity) // 1
 
 ### Cart delegate
 
-You can know when a cart item is added, deleted, if its quantity was changed and when the cart is cleaned, implementing the `CartDelegate`.
+You can know when a cart item is added, deleted, or its quantity was changed and when the cart is cleaned, by implementing the `CartDelegate` protocol.
 
 ```swift
-cart.delegate = self
+cart.delegate = myViewController
 ```
 
 ```swift
@@ -137,6 +137,5 @@ extension MyViewController: CartDelegate {
 
 ### Cloning notes
 
-This project was created with Swift Package Mananger, this mean that the `xcodeproj` file is ignored by default. If you want to use Xcode to build, test or edit this repository, you can use the command `swift package generate-xcodeproj`.
-
+This project was created with Swift Package Mananger, this mean that the `xcodeproj` file is ignored by default. If you want to use Xcode to build, test or edit this repository, you can generate a Xcode Project with the command `swift package generate-xcodeproj`.
 
