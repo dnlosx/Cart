@@ -100,9 +100,9 @@ open class Cart<T: ProductProtocol> {
     ///
     /// - parameter product: The product to increment the quantity.
     ///
-    public func increment<T: ProductProtocol>(_ product: T)  {
+    public func increment(_ product: T)  {
         for (index, item) in items.enumerated() {
-            if product == (item.product as! T) {
+            if product == item.product {
                 increment(at: index)
                 break
             }
@@ -126,9 +126,9 @@ open class Cart<T: ProductProtocol> {
     ///
     /// - parameter product:  The product to reduce the quantity.
     ///
-    public func decrement<T: ProductProtocol>(_ product: T)  {
+    public func decrement(_ product: T)  {
         for (index, item) in items.enumerated() {
-            if product == (item.product as! T) {
+            if product == item.product {
                 decrement(at: index)
                 break
             }
