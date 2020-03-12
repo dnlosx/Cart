@@ -17,11 +17,11 @@
 
 import Foundation
 
-/// Describes the product and quantity.
-public typealias Item<T> = (product: T, quantity: Int)
-
 /// An object that coordinate the products to sell.
 open class Cart<T: ProductProtocol> {
+    
+    /// Describes the product and quantity.
+    public typealias Item = (product: T, quantity: Int)
 
     /// Counts the number of items without regard to quantity of each one.
     /// Use this to know the number of items in a list, e.g. To get the number of rows in a table view.
@@ -56,13 +56,13 @@ open class Cart<T: ProductProtocol> {
     public var delegate: CartDelegate?
 
     /// The list of products to sell.
-    private var items = [Item<T>]()
+    private var items = [Item]()
 
     /// Public init
     public init() {}
 
     /// Gets the item at index.
-    public subscript(index: Int) -> Item<T> {
+    public subscript(index: Int) -> Item {
         return items[index]
     }
 

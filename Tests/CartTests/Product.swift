@@ -19,11 +19,11 @@
 import Foundation
 import Cart
 
-class Product: ProductProtocol {
+struct Product: ProductProtocol {
 
-    var id: Int
-    var name: String
-    var price: Double
+    let id: Int
+    let name: String
+    let price: Double
 
     init(id: Int, name: String, price: Double) {
         self.id = id
