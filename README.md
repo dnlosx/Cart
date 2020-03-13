@@ -1,10 +1,9 @@
 # Cart
 
-iOS and macOS support.
+iOS, macOS and Linux support.
 
 This project contains the basic needed to create a Shopping Cart in memory.
 It doesn't supports (and is not intended) persistence.
-
 
 ## Features
 
@@ -14,12 +13,11 @@ It doesn't supports (and is not intended) persistence.
 - [x] Clean all items from cart
 - [x] Delegate to handle cart items changes
 
-
 ## Examples
 
 ### Implement ProductProtocol
 
-**Cart** doesn't provide any type to use as product in cart, you must implement the `ProductProtocol` to be able of create a Cart instance.
+**Cart** doesn't provide any `Type` to use it as product in the cart, you need to implement the `ProductProtocol` to be able of create a Cart instance.
 
 To conform the `ProductProtocol` is needed to implement the `price` property, and the requirements of `Equatable`.
 
@@ -37,8 +35,10 @@ class Product: ProductProtocol {
         self.price = price
     }
 }
+```
 
-// Equatable is required to implement ProductProtocol.
+Equatable is required to implement `ProductProtocol`.
+```swift
 extension Product: Equatable {
 
     static func == (lhs: Product, rhs: Product) -> Bool {
@@ -48,38 +48,51 @@ extension Product: Equatable {
 
 ```
 
+Now you can create a instance of `Cart`, using your implementation of `ProductProtocol`.
 ```swift
 let items = Cart<Product>()
 ```
 
 ###  When you create a custom class that implements the `ProductProtocol`, you will be ready to create an instance of `Cart`.
 
-```swift
+Note: The `Product` can be any type that implements `ProductProtocol`.
 
-/// Note: The 'Product' can be any class that implements 'ProductProtocol'
+```swift
 let items = Cart<Product>()
 let pizza = Product(name: "Pizza", price: 120.00)
 items.add(pizza)
+```
 
-// You can add a product with an initial quantity
+You can add a product with an initial quantity.
+```swift
 let soda = Product(id: 2, name: "Coca-cola", price: 20.00)
 items.add(soda, quantity: 2)
+```
 
-// Count the number of different items in the cart
-print(items.count) // 2
+Count the number of different items in the cart.
+```swift
+items.count // 2
+```
 
-//  Count the number of products regarding the quantity of each one
-print(items.countQuantities) // 3
+Count the number of products regarding the quantity of each one.
+```swift
+items.countQuantities // 3
+```
 
-// Get the amount to pay
-print(items.amount) // 160.00
+Get the amount to pay.
+```swift
+items.amount // 160.00
+```
 
-// Get an item
+Get an item.
+```swift
 let pizzaItem = items[0]
-print(pizzaItem.product.price) // 120
-print(pizzaItem.quantity) // 1
+pizzaItem.product.price // 120
+pizzaItem.quantity // 1
+```
 
-// Modify the quantity
+ Modify the quantity.
+```swift
 items.increment(pizza)
 print(items[0].quantity) // 2
 
@@ -91,19 +104,19 @@ print(items[0].quantity) // 2
 
 items.decrement(at: 0)  // Decrements item at index
 print(items[0].quantity) // 1
-
-
 ```
 
 
 ### Cart delegate
 
-You can know when a cart item is added, deleted, or its quantity was changed and when the cart is cleaned, by implementing the `CartDelegate` protocol.
+You can know when a cart item is added, deleted, or its quantity is changed and when the cart is cleaned, by implementing the `CartDelegate` protocol.
 
+Set the delegate.
 ```swift
 cart.delegate = myViewController
 ```
 
+Implement the delegate.
 ```swift
 extension MyViewController: CartDelegate {
 
