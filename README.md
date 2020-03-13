@@ -94,16 +94,16 @@ pizzaItem.quantity // 1
  Modify the quantity.
 ```swift
 items.increment(pizza)
-print(items[0].quantity) // 2
+items[0].quantity // 2
 
 items.increment(at: 0) // Increments item at index
-print(items[0].quantity) // 3
+items[0].quantity // 3
 
 items.decrement(pizza)
-print(items[0].quantity) // 2
+items[0].quantity // 2
 
 items.decrement(at: 0)  // Decrements item at index
-print(items[0].quantity) // 1
+items[0].quantity // 1
 ```
 
 
