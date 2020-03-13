@@ -44,7 +44,7 @@ open class Cart<T: ProductProtocol> {
     }
 
     /// The amount to charge.
-    public var amount: Double {
+    open var amount: Double {
         var total: Double = 0
         for item in items {
             total += (item.product.price * Double(item.quantity))
@@ -96,7 +96,7 @@ open class Cart<T: ProductProtocol> {
         delegate?.cart(self, itemsDidChangeWithType: .increment(at: index))
     }
 
-    /// Increments the quantity of the product item
+    /// Increments the quantity of the product item.
     ///
     /// - parameter product: The product to increment the quantity.
     ///
@@ -146,7 +146,7 @@ open class Cart<T: ProductProtocol> {
     }
 
     /// Removes all products from the items list.
-    public func clean() {
+    open func clean() {
         items.removeAll()
 
         delegate?.cart(self, itemsDidChangeWithType: .clean)
