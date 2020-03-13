@@ -1,4 +1,5 @@
 # Cart
+![Swift](https://github.com/dnlosx/Cart/workflows/Swift/badge.svg)
 
 iOS, macOS and Linux support.
 
