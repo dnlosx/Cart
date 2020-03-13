@@ -7,13 +7,23 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  macOS:
 
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
+    - name: macOS
       run: swift build -v
-    - name: Run tests
+    - name: Run macOS tests
       run: swift test -v
+      
+  linux:
+    
+    runs-on: ubuntu-latest
+    container:
+      image: swift:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Linux tests
+        run: swift test -c debug --enable-test-discovery
