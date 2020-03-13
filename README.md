@@ -111,12 +111,12 @@ items[0].quantity // 1
 
 You can know when a cart item is added, deleted, or its quantity is changed and when the cart is cleaned, by implementing the `CartDelegate` protocol.
 
-Set the delegate.
+Setting the delegate.
 ```swift
 cart.delegate = myViewController
 ```
 
-Implement the delegate.
+Implementing the delegate.
 ```swift
 extension MyViewController: CartDelegate {
 
