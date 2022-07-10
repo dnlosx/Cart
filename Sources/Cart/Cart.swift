@@ -17,14 +17,14 @@
 
 import Foundation
 
-/// An object that coordinates the products to buy.
+/// An object that coordinate the products to sell.
 open class Cart<T: ProductProtocol> {
     
-    /// Describes the product and its quantity.
+    /// Describes the product and quantity.
     public typealias Item = (product: T, quantity: Int)
 
-    /// Counts the number of items in the cart, without regarding of quantity of each one.
-    /// Use this to know the number of items in a list, e.g., To get the number of rows in a table view.
+    /// Counts the number of items without regard to quantity of each one.
+    /// Use this to know the number of items in a list, e.g. To get the number of rows in a table view.
     public var count: Int {
         get {
             return items.count
@@ -67,7 +67,7 @@ open class Cart<T: ProductProtocol> {
     }
 
     /// Adds a product to the items.
-    /// If the product already exists, increment the quantity; otherwise, add a new one.
+    /// if the product already exists, increments the quantity, otherwise adds as new one.
     ///
     /// - parameter product: The product to add.
     /// - parameter quantity: How many times will add the products. Default is 1.
@@ -87,7 +87,7 @@ open class Cart<T: ProductProtocol> {
         delegate?.cart(self, itemsDidChangeWithType: .add(at: (items.count - 1)))
     }
 
-    /// Increments the quantity of an item at index by 1.
+    /// Increments the quantity of an item at index in 1.
     ///
     /// - parameter index: The index of the product to increment.
     ///
@@ -98,7 +98,7 @@ open class Cart<T: ProductProtocol> {
 
     /// Increments the quantity of the product item.
     ///
-    /// - parameter product: The product you want to increment its quantity.
+    /// - parameter product: The product to increment the quantity.
     ///
     public func increment(_ product: T)  {
         for (index, item) in items.enumerated() {
@@ -111,7 +111,7 @@ open class Cart<T: ProductProtocol> {
 
     /// Decrements the quantity of an item at index in 1, removes from items if the quantity downs to 0.
     ///
-    /// - parameter index: The index of the product to decrement its quantity.
+    /// - parameter index: The index of the product to reduce.
     ///
     public func decrement(at index: Int) {
         if items[index].quantity > 1 {
@@ -122,7 +122,7 @@ open class Cart<T: ProductProtocol> {
         }
     }
 
-    /// Decrements the quantity of a product.
+    /// Decrements the quantity of a product item.
     ///
     /// - parameter product:  The product to reduce the quantity.
     ///
@@ -135,7 +135,7 @@ open class Cart<T: ProductProtocol> {
         }
     }
 
-    /// Deletes the product at index from the items list, no matter the quantity.
+    /// Removes completely the product at index from the items list, not matter the quantity.
     ///
     /// - parameter index: The index of the product to remove.
     ///
