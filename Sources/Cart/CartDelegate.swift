@@ -37,7 +37,7 @@ public enum CartItemChangeType {
 
 public protocol CartDelegate {
 
-    /// It's called when an item is added, removed, or changed its quantity.
+    /// Its called when an item is added, removed, or change its quantity.
     ///
     /// - parameter type: Describes which type of change was made.
     ///
